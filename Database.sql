@@ -15,7 +15,7 @@ CREATE TABLE Kaffesmaking (
   	Poeng INTEGER NOT NULL,
     	Dato TEXT,
 	
-    	PRIMARY KEY (Epost, BrenneriID),
+    	PRIMARY KEY (Epost, KaffeNavn, BrenneriID),
     	FOREIGN KEY (Epost)
         	REFERENCES Bruker (Epost)
             		ON DELETE CASCADE
@@ -71,7 +71,7 @@ CREATE TABLE Art (
 );
 
 CREATE TABLE KaffebonneType (
-    	Navn INTEGER PRIMARY KEY NOT NULL,
+    	Navn TEXT PRIMARY KEY NOT NULL,
     	ArtNavn TEXT NOT NULL,
 	
 	FOREIGN KEY (ArtNavn)
@@ -79,7 +79,7 @@ CREATE TABLE KaffebonneType (
 );
 
 CREATE TABLE BestarAv (
-    	KaffebonneNavn INTEGER NOT NULL,
+    	KaffebonneNavn TEXT NOT NULL,
     	PartiID INTEGER NOT NULL,
 	
     	PRIMARY KEY (KaffebonneNavn, PartiID),
@@ -111,7 +111,7 @@ CREATE TABLE Gard (
 );
 
 CREATE TABLE DyrkesAv (
-    	KaffebonneNavn INTEGER NOT NULL,
+    	KaffebonneNavn TEXT NOT NULL,
     	GardID INTEGER NOT NULL,
 	
     	PRIMARY KEY (KaffebonneNavn, GardID),
