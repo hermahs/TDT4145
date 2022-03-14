@@ -1,10 +1,12 @@
+PRAGMA foreign_keys = ON;
+
 CREATE TABLE Art (
     	ArtNavn TEXT PRIMARY KEY NOT NULL
 );
 
 CREATE TABLE ForedlingsMetode (
     	Navn TEXT PRIMARY KEY NOT NULL,
-	Beskrivelse TEXT NOT NULL
+	Beskrivelse TEXT UNIQUE
 );
 
 CREATE TABLE Region (
@@ -14,23 +16,26 @@ CREATE TABLE Region (
 );
 
 CREATE TABLE Gard (
-    	GardID INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT,
+    	GardID INTEGER PRIMARY KEY NOT NULL,
+	Navn TEXT NOT NULL,
     	MOH INTEGER NOT NULL,
-    	Region INTEGER NOT NULL,
-    	FOREIGN KEY (Region)
-        	REFERENCES Region (RegionId)
+    	Region TEXT NOT NULL,
+	Land TEXT NOT NULL,
+    	FOREIGN KEY (Region, Land)
+        	REFERENCES Region (Region, Land)
+			ON DELETE RESTRICT
 );
 
 CREATE TABLE KaffeBrenneri (
-    	BrenneriID INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT,
+    	BrenneriID INTEGER PRIMARY KEY NOT NULL,
     	Navn TEXT NOT NULL
 );
 
 CREATE TABLE Bruker (
-    	epost TEXT PRIMARY KEY NOT NULL,
-    	fornavn TEXT NOT NULL,
-    	etternavn TEXT NOT NULL,
-    	passord TEXT NOT NULL,
+    	Epost TEXT PRIMARY KEY NOT NULL,
+    	Fornavn TEXT NOT NULL,
+    	Etternavn TEXT NOT NULL,
+    	Passord TEXT NOT NULL
 );
 
 CREATE TABLE FerdigBrentKaffe (
@@ -40,7 +45,7 @@ CREATE TABLE FerdigBrentKaffe (
     	Kilopris INTEGER NOT NULL ,
     	BrenneriID INTEGER NOT NULL,
 	PartiID INTEGER NOT NULL,
-	PRIMARY KEY (Navn, BrennerID),
+	PRIMARY KEY (Navn, BrenneriID),
 	FOREIGN KEY (BrenneriID)
         	REFERENCES KaffeBrenneri (BrenneriID)
 		ON DELETE CASCADE
@@ -54,9 +59,9 @@ CREATE TABLE FerdigBrentKaffe (
 CREATE TABLE KaffeSmaking (
     	epost TEXT NOT NULL,
     	BrentKaffeID INTEGER NOT NULL,
-    	Notat TEXT NOT NULL,
+    	Notat TEXT,
   	Poeng INTEGER NOT NULL,
-    	Dato TEXT NOT NULL,
+    	Dato TEXT,
     	PRIMARY KEY (epost, BrentKaffeID),
     	FOREIGN KEY (epost)
         	REFERENCES Bruker (epost)
@@ -69,19 +74,21 @@ CREATE TABLE KaffeSmaking (
 );
 
 CREATE TABLE KaffeBonner (
-    	KaffeBonneID INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT,
-    	Navn TEXT NOT NULL,
+    	KaffeBonneID INTEGER PRIMARY KEY NOT NULL,
+    	Navn TEXT NOT NULL
 );
 
 CREATE TABLE KaffeParti (
-    	PartiID INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT,
+    	PartiID INTEGER PRIMARY KEY NOT NULL,
     	InnhostningAr INTEGER NOT NULL,
     	Gard INTEGER NOT NULL,
     	ForedlingsMetode TEXT NOT NULL,
     	FOREIGN KEY (ForedlingsMetode)
-        	REFERENCES ForedlingsMetode (Navn),
+        	REFERENCES ForedlingsMetode (Navn)
+			ON DELETE RESTRICT,
     	FOREIGN KEY (Gard)
         	REFERENCES Gard (GardID)
+			ON DELETE RESTRICT
 );
 
 CREATE TABLE Kjoper (
