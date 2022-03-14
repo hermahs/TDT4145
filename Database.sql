@@ -21,7 +21,7 @@ CREATE TABLE Kaffesmaking (
             		ON DELETE CASCADE
             		ON UPDATE NO ACTION,
     	FOREIGN KEY (KaffeNavn, BrenneriID)
-        	REFERENCES FerdigbrentKaffe (Navn)
+        	REFERENCES FerdigbrentKaffe (Navn, BrenneriID)
             		ON DELETE CASCADE
             		ON UPDATE NO ACTION
 );
@@ -38,8 +38,8 @@ CREATE TABLE FerdigbrentKaffe (
 	PRIMARY KEY (Navn, BrenneriID),
 	FOREIGN KEY (PartiID)
 		REFERENCES Kaffeparti (PartiID)
-		ON DELETE CASCADE
-		ON UPDATE NO ACTION,
+			ON DELETE CASCADE
+			ON UPDATE NO ACTION,
 	FOREIGN KEY (BrenneriID)
         	REFERENCES Kaffebrenneri (ID)
             		ON DELETE CASCADE
