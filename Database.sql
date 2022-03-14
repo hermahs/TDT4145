@@ -38,7 +38,7 @@ CREATE TABLE FerdigbrentKaffe (
 	
 	PRIMARY KEY (Navn, BrenneriID),
 	FOREIGN KEY (PartiID)
-		REFERENCES Kaffeparti (PartiID)
+		REFERENCES Kaffeparti (ID)
 			ON DELETE CASCADE
 			ON UPDATE NO ACTION,
 	FOREIGN KEY (BrenneriID)
@@ -64,7 +64,7 @@ CREATE TABLE Kaffeparti (
         	REFERENCES Foredlingsmetode (Navn)
 			ON DELETE RESTRICT,
     	FOREIGN KEY (GardID)
-        	REFERENCES Gard (GardID)
+        	REFERENCES Gard (ID)
 			ON DELETE RESTRICT
 );
 
@@ -92,7 +92,7 @@ CREATE TABLE BestarAv (
             		ON DELETE CASCADE
             		ON UPDATE NO ACTION,
     	FOREIGN KEY (PartiID)
-        	REFERENCES Kaffeparti (PartiID)
+        	REFERENCES Kaffeparti (ID)
             		ON DELETE CASCADE
             		ON UPDATE NO ACTION
 );
