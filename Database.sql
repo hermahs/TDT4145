@@ -24,6 +24,7 @@ CREATE TABLE Kaffesmaking (
         	REFERENCES FerdigbrentKaffe (Navn, BrenneriID)
             		ON DELETE CASCADE
             		ON UPDATE NO ACTION
+	CHECK (Poeng >= 0 AND Poeng <= 10)
 );
 
 CREATE TABLE FerdigbrentKaffe (
@@ -44,6 +45,7 @@ CREATE TABLE FerdigbrentKaffe (
         	REFERENCES Kaffebrenneri (ID)
             		ON DELETE CASCADE
             		ON UPDATE NO ACTION
+	CHECK( Brenningsgrad IN ('mørk','middels','lys') )
 );
 
 CREATE TABLE Kaffebrenneri (
@@ -68,6 +70,8 @@ CREATE TABLE Kaffeparti (
 
 CREATE TABLE Art (
     	Navn TEXT PRIMARY KEY NOT NULL
+	
+	CHECK ( Navn IN ('coffea arabica', 'coffea robusta', 'coffea liberica') )
 );
 
 CREATE TABLE KaffebonneType (
