@@ -1,0 +1,346 @@
+{
+    "Bruker": [
+        {
+            "Epost": "ola@gmail.com",
+            "Fornavn": "Ola",
+            "Etternavn": "Olsen",
+            "Passord": "passord"
+        },
+        {
+            "Epost": "kari@gmail.com",
+            "Fornavn": "Kari",
+            "Etternavn": "Olsen",
+            "Passord": "passord"
+        },
+        {
+            "Epost": "anders@gmail.com",
+            "Fornavn": "Anders",
+            "Etternavn": "Olsen",
+            "Passord": "passord"
+        },
+        {
+            "Epost": "ingrid@gmail.com",
+            "Fornavn": "Ingrid",
+            "Etternavn": "Halvorsen",
+            "Passord": "passord"
+        },
+        {
+            "Epost": "marie@gmail.com",
+            "Fornavn": "Marie",
+            "Etternavn": "Kristoffersen",
+            "Passord": "passord"
+        },
+        {
+            "Epost": "kristin@gmail.com",
+            "Fornavn": "Kristin",
+            "Etternavn": "Christoffersen",
+            "Passord": "passord"
+        },
+        {
+            "Epost": "mads@gmail.com",
+            "Fornavn": "Mads",
+            "Etternavn": "Hansen",
+            "Passord": "passord"
+        }
+    ],
+
+    "Kaffesmaking": [
+        {
+            "Epost": "mads@gmail.com",
+            "KaffeNavn": "Svart kaffe",
+            "BrenneriID": 1,
+            "Notat": "Veldig god!",
+            "Poeng": 8,
+            "Dato": "2022-02-14"
+        },
+        {
+            "Epost": "kari@gmail.com",
+            "KaffeNavn": "Svart kaffe",
+            "BrenneriID": 1,
+            "Notat": "Helt OK",
+            "Poeng": 6,
+            "Dato": "2022-02-14"
+        },
+        {
+            "Epost": "mads@gmail.com",
+            "KaffeNavn": "Cappucino",
+            "BrenneriID": 1,
+            "Notat": " Meget god!",
+            "Poeng": 9,
+            "Dato": "2022-03-14"
+        },
+        {
+            "Epost": "ingrid@gmail.com",
+            "KaffeNavn": "Mocca",
+            "BrenneriID": 1,
+            "Notat": "På det jevne!",
+            "Poeng": 5,
+            "Dato": "2022-03-09"
+        },
+        {
+            "Epost": "ola@gmail.com",
+            "KaffeNavn": "Svart kaffe",
+            "BrenneriID": 2,
+            "Notat": "Middels!",
+            "Poeng": 4,
+            "Dato": "2022-01-28"
+        },
+        {
+            "Epost": "kristin@gmail.com",
+            "KaffeNavn": "Cappucino",
+            "BrenneriID": 2,
+            "Notat": "Utmerket!",
+            "Poeng": 10,
+            "Dato": "2022-03-01"
+        },
+        {
+            "Epost": "kari@gmail.com",
+            "KaffeNavn": "Cappucino",
+            "BrenneriID": 3,
+            "Notat": "Elendig!",
+            "Poeng": 2,
+            "Dato": "2022-02-27"
+        }
+    ],
+
+    "FerdigbrentKaffe": [
+        {
+            "Navn": "Svart kaffe",
+            "BrenneriID": 1,
+            "Brenningsgrad": "mørk",
+            "Dato": "2022-01-28",
+            "Beskrivelse": "Mørk aroma med søt smak",
+            "KiloprisNOK": 600,
+            "PartiID": 1
+        },
+        {
+            "Navn": "Cappucino",
+            "BrenneriID": 1,
+            "Brenningsgrad": "lys",
+            "Dato": "2022-02-27",
+            "Beskrivelse": "Byens beste!",
+            "KiloprisNOK": 400,
+            "PartiID": 1
+        },
+        {
+            "Navn": "Mocca",
+            "BrenneriID": 1,
+            "Brenningsgrad": "mørk",
+            "Dato": "2022-03-01",
+            "Beskrivelse": "Favodryf guhioj",
+            "KiloprisNOK": 200,
+            "PartiID": 1
+        },
+        {
+            "Navn": "Svart kaffe",
+            "BrenneriID": 2,
+            "Brenningsgrad": "lys",
+            "Dato": "2022-01-31",
+            "Beskrivelse": "Mørk aroma med mild smak",
+            "KiloprisNOK": 300,
+            "PartiID": 2
+        },
+        {
+            "Navn": "Cappucino",
+            "BrenneriID": 2,
+            "Brenningsgrad": "middels",
+            "Dato": "2022-03-01",
+            "Beskrivelse": "Folkets favoritt!",
+            "KiloprisNOK": 350,
+            "PartiID": 2
+        },
+        {
+            "Navn": "Cappucino",
+            "BrenneriID": 3,
+            "Brenningsgrad": "middels",
+            "Dato": "2022-03-01",
+            "Beskrivelse": "Mammas favoritt!",
+            "KiloprisNOK": 550,
+            "PartiID": 3
+        }
+    ],
+
+    "Kaffebrenneri": [
+        {
+            "ID": 1,
+            "Navn": "Coffe Place"
+        },
+        {
+            "ID": 2,
+            "Navn": "Coffe Bar"   
+        },
+        {
+            "ID": 3,
+            "Navn": "Coffe Corner"   
+        }
+    ],
+
+
+    "Kaffeparti": [
+        {
+            "ID": 1,
+            "InnhostningAr": 2021,
+            "KiloprisUSD": 12,
+            "GardID": 1,
+            "ForedlingsNavn": "Tørket"
+        },
+        {
+            "ID": 2,
+            "InnhostningAr": 2020,
+            "KiloprisUSD": 9,
+            "GardID": 1,
+            "ForedlingsNavn": "Vasket"
+        },
+        {
+            "ID": 3,
+            "InnhostningAr": 2022,
+            "KiloprisUSD": 8,
+            "GardID": 2,
+            "ForedlingsNavn": "Tørket"
+        }
+    ],
+
+    "Art": [
+        {
+            "Navn": "coffea arabica"
+        },
+        {
+            "Navn": "coffea robusta"
+        },
+        {
+            "Navn": "coffea liberica"
+        }
+    ],
+
+    "KaffebonneType": [
+        {
+            "Navn": "Kakao",
+            "ArtNavn": "coffea arabica"
+        },
+        {
+            "Navn": "Bani",
+            "ArtNavn": "coffea robusta"
+        },
+        {
+            "Navn": "Alfa",
+            "ArtNavn": "coffea liberica"
+        }
+    ],
+
+    "BestarAv": [
+        {
+            "KaffebonneNavn": "Kakao",
+            "PartiID": 1
+        },
+        {
+            "KaffebonneNavn": "Bani",
+            "PartiID": 2
+        },
+        {
+            "KaffebonneNavn": "Alfa",
+            "PartiID": 3
+        }
+    ],
+
+    "Foredlingsmetode": [
+        {
+            "Navn": "Vasket",
+            "Beskrivelse": "Vasker bønnene"
+        },
+        {
+            "Navn": "Tørket",
+            "Beskrivelse": "Tørker bønnene"
+        }
+    ],
+
+
+    "Gard": [
+        {
+            "ID": 1,
+            "Navn": "Lofoten",
+            "MeterOverHavet": 48,
+            "Region": "Nordland",
+            "Land": "Norge"
+        },
+        {
+            "ID": 2,
+            "Navn": "CoffeGard",
+            "MeterOverHavet": 492,
+            "Region": "Toscana",
+            "Land": "Italia"
+        },
+        {
+            "ID": 3,
+            "Navn": "Mes Que un Club",
+            "MeterOverHavet": 211,
+            "Region": "Toscana",
+            "Land": "Spania"
+        }
+    ],
+
+    "DyrkesAv": [
+        {
+            "KaffebonneNavn": "Kakao",
+            "GardID": 1
+        },
+        {
+            "KaffebonneNavn": "Bani",
+            "GardID": 1
+        },
+        {
+            "KaffebonneNavn": "Alfa",
+            "GardID": 2
+        }
+    ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "Region": [
+        {
+            "Region": "c",
+            "Land": "Spania"
+        },
+        {
+            "Region": "Nordland",
+            "Land": "Norge"
+        },
+        {
+            "Region": "Toscana",
+            "Land": "Italia"
+        },
+        {
+            "Region": "Bejing",
+            "Land": "Kina"
+        },
+        {
+            "Region": "Kinyarwanda",
+            "Land": "Rwanda"
+        },
+        {
+            "Region": "Nairobi",
+            "Land": "Kanya"
+        },
+        {
+            "Region": "Quito",
+            "Land": "Colombia"
+        },
+        {
+            "Region": "Arhuaco",
+            "Land": "Colombia"
+        }
+    ]
+
+}
