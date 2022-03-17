@@ -7,7 +7,7 @@ def main(cur):
     cursor = cur
 
     print('Velkommen til kaffeDB\n')
-    isLogin = input('Logg inn med eksisterende bruker? [y/n]: ')
+    isLogin = input('\nLogg inn med eksisterende bruker? [y/n]: ')
     if (isLogin == 'n'):
         print('Registrer en ny bruker:')
         email = input('Epost: ')
@@ -23,13 +23,22 @@ def main(cur):
 def login():
     global user
 
-    print("Logg inn:")
+    print("\nLogg inn:")
     email = input('Epost: ')
     password = input('Passord: ')
     user = sql.login(cursor, email, password)
-    print(user)
+    next = input("\nHva vil du gjøre? (1) Registrer kaffesmaking, (2) Hent data: ")
+    if (next == "1"):
+        reviewCoffee()
+    elif (next == "2"):
+        getData()
 
 def reviewCoffee():
-    return
+    global user
+
+    print("\nRegistrer kaffesmaking:")
+
+def getData():
+    print("\nHent data:")
 
 
