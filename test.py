@@ -9,7 +9,5 @@ rows = cursor.fetchall()
 print("All rows in the table Bruker:")
 print(rows)
 
-
 con.close()
-
 
