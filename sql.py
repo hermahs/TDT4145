@@ -9,7 +9,7 @@ def init(cur, con):
     connection = con
     cursor = cur
 
-def createUser(cursor: sqlite3.Cursor, email: str, fornavn: str, etternavn: str, passord: str) -> str:
+def createUser(email: str, fornavn: str, etternavn: str, passord: str) -> str:
     try:
         cursor.execute("INSERT INTO Bruker VALUES (:epost, :fornavn, :etternavn, :passord)", {"epost": email, "fornavn": fornavn, "etternavn": etternavn, "passord": passord})
         connection.commit()
@@ -18,7 +18,7 @@ def createUser(cursor: sqlite3.Cursor, email: str, fornavn: str, etternavn: str,
         return "Epost er tatt"
     return "Noe gikk galt"
 
-def login(cursor: sqlite3.Cursor, epost: str, passord: str) -> str:
+def login(epost: str, passord: str) -> str:
     cursor.execute("SELECT epost, passord FROM Bruker WHERE epost = :epost;", {"epost": epost})
     row = cursor.fetchone()
     if (row == None):
@@ -29,8 +29,13 @@ def login(cursor: sqlite3.Cursor, epost: str, passord: str) -> str:
         print("Logget inn")
         return row[0]
 
-def getMostCoffeeTastedThisYear(cursor: sqlite.Cursor) -> list: #fungerer kun for året 2022 :)
-    cursor.execute("SELECT Fornavn, Etternavn, COUNT(*) AS Antall FROM Kaffesmaking AS K NATURAL INNER JOIN Bruker AS B WHERE Dato >= '2022-01-01') GROUP BY Epost ORDER BY Antall DESC;")
+def getCoffeesByName(name: str) -> list:
+    cursor.execute("SELECT K.Navn, B.Navn, B.ID FROM FerdigbrentKaffe AS K INNER JOIN Kaffebrenneri AS B ON (K.BrenneriID = B.ID) WHERE K.Navn LIKE '%' + :name + '%';", {"name": name})
+    rows = cursor.fetchall()
+    return rows
+
+def getMostCoffeeTastedThisYear() -> list: #fungerer kun for året 2022 :)
+    cursor.execute("SELECT Fornavn, Etternavn, COUNT(*) AS Antall FROM Kaffesmaking AS K INNER JOIN Bruker AS B WHERE Dato >= '2022-01-01') GROUP BY Epost ORDER BY Antall DESC;")
     rows = cursor.fetchall()
     return rows
 
@@ -52,6 +57,7 @@ def searchForNotWashedByCountry(cursor: sqlite3.Cursor, land: str) -> list:
 def createCoffeeTasting(cursor: sqlite3.Cursor, epost: str, brennriID: int, kaffeNavn: str, poeng: int, smaksNotat: str) -> str:
     try:
         cursor.execute("INSERT INTO Kaffesmaking VALUES (:epost, :kaffeNavn, :brenneriID, :smaksNotat, :poeng, :dato);", {"epost": epost, "kaffeNavn": kaffeNavn, "brenneriID": brenneriID, "smaksNotat": smaksNotat, "poeng": poeng, "dato": date.today().strftime("%Y-%m-%d")})
+        connection.commit()
         return "Kaffesmaking lagt til"
     except Exception:
         return "noe gikk feil"

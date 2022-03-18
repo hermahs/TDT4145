@@ -15,7 +15,7 @@ def main(cur):
         fName = input('Fornavn*: ')
         lName = input('Etternavn*: ')
         password = input('Passord*: ')
-        msg = sql.createUser(cursor, email, fName, lName, password)
+        msg = sql.createUser(email, fName, lName, password)
         print(msg)
         login()
     else:
@@ -27,7 +27,7 @@ def login():
     print("\nLogg inn:")
     email = input('Epost*: ')
     password = input('Passord*: ')
-    user = sql.login(cursor, email, password)
+    user = sql.login(email, password)
     options()
 
 def options():
@@ -49,8 +49,11 @@ def reviewCoffee():
     global user
 
     print("\nRegistrer kaffesmaking:")
-    coffeName = input("Kaffenavn*: ")
-    # TODO: sjekk om kaffenavn eksisterer og vis liste over kaffenavn, brennerinavn, brenneriID
+    coffeeName = input("Kaffenavn*: ")
+
+    result = sql.getCoffeesByName(coffeeName)
+    print(result)
+
     roastery = input("Velg ID til brenneri fra listen*: ")
     note = input("Et kort notat: ")
     score = input("Poengscore (0-10)*: ")
