@@ -15,8 +15,13 @@ def createDataBase():
     for key in data.keys():
         for d in data[key]:
             e = [d[a] for a in d.keys()]
-            print(f"INSERT INTO {key} VALUES {*e,};")
-            #cursor.execute(f"INSERT INTO {key} VALUES ({[]})" 
+            if len(e) == 1:
+                print(f"INSERT INTO {key} VALUES ('{e[0]}');")
+                cursor.execute(f"INSERT INTO {key} VALUES ('{e[0]}');")
+            else:
+                print(f"INSERT INTO {key} VALUES {*e,};")
+                cursor.execute(f"INSERT INTO {key} VALUES {*e,};")
+            con.commit()
     return
 
 createDataBase()

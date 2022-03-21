@@ -44,6 +44,293 @@
         }
     ],
 
+    "Art": [
+        {
+            "Navn": "coffea arabica"
+        },
+        {
+            "Navn": "coffea robusta"
+        },
+        {
+            "Navn": "coffea liberica"
+        }
+    ],
+
+    "Region": [
+        {
+            "Region": "c",
+            "Land": "Spania"
+        },
+        {
+            "Region": "Nordland",
+            "Land": "Norge"
+        },
+        {
+            "Region": "Toscana",
+            "Land": "Italia"
+        },
+        {
+            "Region": "Bejing",
+            "Land": "Kina"
+        },
+        {
+            "Region": "Kinyarwanda",
+            "Land": "Rwanda"
+        },
+        {
+            "Region": "Nairobi",
+            "Land": "Kenya"
+        },
+        {
+            "Region": "Quito",
+            "Land": "Colombia"
+        },
+        {
+            "Region": "Arhuaco",
+            "Land": "Colombia"
+        }
+    ],
+
+    "Kaffebrenneri": [
+        {
+            "ID": 1,
+            "Navn": "Coffe Place"
+        },
+        {
+            "ID": 2,
+            "Navn": "Coffe Bar"   
+        },
+        {
+            "ID": 3,
+            "Navn": "Coffe Corner"   
+        }
+    ],
+
+    "KaffebonneType": [
+        {
+            "Navn": "Kakao",
+            "ArtNavn": "coffea arabica"
+        },
+        {
+            "Navn": "Bani",
+            "ArtNavn": "coffea robusta"
+        },
+        {
+            "Navn": "Alfa",
+            "ArtNavn": "coffea liberica"
+        },
+        {
+            "Navn": "Celi",
+            "ArtNavn": "coffea liberica"
+        },
+        {
+            "Navn": "Deli",
+            "ArtNavn": "coffea liberica"
+        },
+        {
+            "Navn": "Feli",
+            "ArtNavn": "coffea robusta"
+        },
+        {
+            "Navn": "Heli",
+            "ArtNavn": "coffea arabica"
+        }
+    ],
+
+    "Foredlingsmetode": [
+        {
+            "Navn": "Vasket",
+            "Beskrivelse": "Vasker bønnene"
+        },
+        {
+            "Navn": "Tørket",
+            "Beskrivelse": "Tørker bønnene"
+        }
+    ],
+
+    "Gard": [
+        {
+            "ID": 1,
+            "Navn": "Lofoten",
+            "MeterOverHavet": 48,
+            "Region": "Nordland",
+            "Land": "Norge"
+        },
+        {
+            "ID": 2,
+            "Navn": "CoffeGard",
+            "MeterOverHavet": 492,
+            "Region": "Toscana",
+            "Land": "Italia"
+        },
+        {
+            "ID": 3,
+            "Navn": "Mes Que un Club",
+            "MeterOverHavet": 211,
+            "Region": "c",
+            "Land": "Spania"
+        },
+        {
+            "ID": 4,
+            "Navn": "Kipsang",
+            "MeterOverHavet": 678,
+            "Region": "Kinyarwanda",
+            "Land": "Rwanda"
+        },
+        {
+            "ID": 5,
+            "Navn": "Bernal",
+            "MeterOverHavet": 901,
+            "Region": "Quito",
+            "Land": "Colombia"
+        }
+    ],
+
+    "Kaffeparti": [
+        {
+            "ID": 1,
+            "InnhostningAr": 2021,
+            "KiloprisUSD": 12,
+            "GardID": 1,
+            "ForedlingsNavn": "Tørket"
+        },
+        {
+            "ID": 2,
+            "InnhostningAr": 2020,
+            "KiloprisUSD": 9,
+            "GardID": 1,
+            "ForedlingsNavn": "Vasket"
+        },
+        {
+            "ID": 3,
+            "InnhostningAr": 2022,
+            "KiloprisUSD": 8,
+            "GardID": 2,
+            "ForedlingsNavn": "Tørket"
+        },
+        {
+            "ID": 4,
+            "InnhostningAr": 2018,
+            "KiloprisUSD": 3,
+            "GardID": 4,
+            "ForedlingsNavn": "Tørket"
+        },
+        {
+            "ID": 5,
+            "InnhostningAr": 2019,
+            "KiloprisUSD": 32,
+            "GardID": 5,
+            "ForedlingsNavn": "Vasket"
+        },
+        {
+            "ID": 6,
+            "InnhostningAr": 2016,
+            "KiloprisUSD": 22,
+            "GardID": 4,
+            "ForedlingsNavn": "Vasket"
+        },
+        {
+            "ID": 7,
+            "InnhostningAr": 2015,
+            "KiloprisUSD": 10,
+            "GardID": 5,
+            "ForedlingsNavn": "Tørket"
+        }
+    ],
+
+    "FerdigbrentKaffe": [
+        {
+            "Navn": "Svart kaffe",
+            "BrenneriID": 1,
+            "Brenningsgrad": "mork",
+            "Dato": "2022-01-28",
+            "Beskrivelse": "Mørk aroma med søt smak",
+            "KiloprisNOK": 600,
+            "PartiID": 1
+        },
+        {
+            "Navn": "Cappucino",
+            "BrenneriID": 1,
+            "Brenningsgrad": "lys",
+            "Dato": "2022-02-27",
+            "Beskrivelse": "Byens beste!",
+            "KiloprisNOK": 400,
+            "PartiID": 1
+        },
+        {
+            "Navn": "Mocca",
+            "BrenneriID": 1,
+            "Brenningsgrad": "mork",
+            "Dato": "2022-03-01",
+            "Beskrivelse": "Favodryf guhioj",
+            "KiloprisNOK": 200,
+            "PartiID": 1
+        },
+        {
+            "Navn": "Svart kaffe",
+            "BrenneriID": 2,
+            "Brenningsgrad": "lys",
+            "Dato": "2022-01-31",
+            "Beskrivelse": "Mørk aroma med mild smak",
+            "KiloprisNOK": 300,
+            "PartiID": 2
+        },
+        {
+            "Navn": "Cappucino",
+            "BrenneriID": 2,
+            "Brenningsgrad": "middels",
+            "Dato": "2022-03-01",
+            "Beskrivelse": "Folkets favoritt!",
+            "KiloprisNOK": 350,
+            "PartiID": 2
+        },
+        {
+            "Navn": "Cappucino",
+            "BrenneriID": 3,
+            "Brenningsgrad": "middels",
+            "Dato": "2022-03-01",
+            "Beskrivelse": "Mammas favoritt!",
+            "KiloprisNOK": 550,
+            "PartiID": 3
+        },
+        {
+            "Navn": "Rwa-kaffe",
+            "BrenneriID": 3,
+            "Brenningsgrad": "mork",
+            "Dato": "2022-02-01",
+            "Beskrivelse": "Afrikas beste!",
+            "KiloprisNOK": 890,
+            "PartiID": 4
+        },
+        {
+            "Navn": "Colo-kaffe",
+            "BrenneriID": 1,
+            "Brenningsgrad": "middels",
+            "Dato": "2022-01-01",
+            "Beskrivelse": "Sør-Amerikas beste!",
+            "KiloprisNOK": 150,
+            "PartiID": 5
+        },
+        {
+            "Navn": "Rwa-kaffe2",
+            "BrenneriID": 3,
+            "Brenningsgrad": "mork",
+            "Dato": "2022-02-01",
+            "Beskrivelse": "Afrikas nest beste!",
+            "KiloprisNOK": 890,
+            "PartiID": 6
+        },
+        {
+            "Navn": "Colo-kaffe2",
+            "BrenneriID": 1,
+            "Brenningsgrad": "middels",
+            "Dato": "2022-01-01",
+            "Beskrivelse": "Sør-Amerikas nest beste! - floral",
+            "KiloprisNOK": 150,
+            "PartiID": 7
+        }
+    ],
+
     "Kaffesmaking": [
         {
             "Epost": "mads@gmail.com",
@@ -136,216 +423,16 @@
         {
             "Epost": "mads@gmail.com",
             "KaffeNavn": "Colo-kaffe2",
-            "BrenneriID": 2,
+            "BrenneriID": 1,
             "Notat": "Nice!",
             "Poeng": 3,
             "Dato": "2022-03-07"
         }
     ],
 
-    "FerdigbrentKaffe": [
-        {
-            "Navn": "Svart kaffe",
-            "BrenneriID": 1,
-            "Brenningsgrad": "mørk",
-            "Dato": "2022-01-28",
-            "Beskrivelse": "Mørk aroma med søt smak",
-            "KiloprisNOK": 600,
-            "PartiID": 1
-        },
-        {
-            "Navn": "Cappucino",
-            "BrenneriID": 1,
-            "Brenningsgrad": "lys",
-            "Dato": "2022-02-27",
-            "Beskrivelse": "Byens beste!",
-            "KiloprisNOK": 400,
-            "PartiID": 1
-        },
-        {
-            "Navn": "Mocca",
-            "BrenneriID": 1,
-            "Brenningsgrad": "mørk",
-            "Dato": "2022-03-01",
-            "Beskrivelse": "Favodryf guhioj",
-            "KiloprisNOK": 200,
-            "PartiID": 1
-        },
-        {
-            "Navn": "Svart kaffe",
-            "BrenneriID": 2,
-            "Brenningsgrad": "lys",
-            "Dato": "2022-01-31",
-            "Beskrivelse": "Mørk aroma med mild smak",
-            "KiloprisNOK": 300,
-            "PartiID": 2
-        },
-        {
-            "Navn": "Cappucino",
-            "BrenneriID": 2,
-            "Brenningsgrad": "middels",
-            "Dato": "2022-03-01",
-            "Beskrivelse": "Folkets favoritt!",
-            "KiloprisNOK": 350,
-            "PartiID": 2
-        },
-        {
-            "Navn": "Cappucino",
-            "BrenneriID": 3,
-            "Brenningsgrad": "middels",
-            "Dato": "2022-03-01",
-            "Beskrivelse": "Mammas favoritt!",
-            "KiloprisNOK": 550,
-            "PartiID": 3
-        },
-        {
-            "Navn": "Rwa-kaffe",
-            "BrenneriID": 3,
-            "Brenningsgrad": "mørk",
-            "Dato": "2022-02-01",
-            "Beskrivelse": "Afrikas beste!",
-            "KiloprisNOK": 890,
-            "PartiID": 4
-        },
-        {
-            "Navn": "Colo-kaffe",
-            "BrenneriID": 1,
-            "Brenningsgrad": "middels",
-            "Dato": "2022-01-01",
-            "Beskrivelse": "Sør-Amerikas beste!",
-            "KiloprisNOK": 150,
-            "PartiID": 5
-        },
-        {
-            "Navn": "Rwa-kaffe2",
-            "BrenneriID": 3,
-            "Brenningsgrad": "mørk",
-            "Dato": "2022-02-01",
-            "Beskrivelse": "Afrikas nest beste!",
-            "KiloprisNOK": 890,
-            "PartiID": 6
-        },
-        {
-            "Navn": "Colo-kaffe2",
-            "BrenneriID": 1,
-            "Brenningsgrad": "middels",
-            "Dato": "2022-01-01",
-            "Beskrivelse": "Sør-Amerikas nest beste! - floral",
-            "KiloprisNOK": 150,
-            "PartiID": 7
-        }
-    ],
-
-    "Kaffebrenneri": [
-        {
-            "ID": 1,
-            "Navn": "Coffe Place"
-        },
-        {
-            "ID": 2,
-            "Navn": "Coffe Bar"   
-        },
-        {
-            "ID": 3,
-            "Navn": "Coffe Corner"   
-        }
-    ],
 
 
-    "Kaffeparti": [
-        {
-            "ID": 1,
-            "InnhostningAr": 2021,
-            "KiloprisUSD": 12,
-            "GardID": 1,
-            "ForedlingsNavn": "Tørket"
-        },
-        {
-            "ID": 2,
-            "InnhostningAr": 2020,
-            "KiloprisUSD": 9,
-            "GardID": 1,
-            "ForedlingsNavn": "Vasket"
-        },
-        {
-            "ID": 3,
-            "InnhostningAr": 2022,
-            "KiloprisUSD": 8,
-            "GardID": 2,
-            "ForedlingsNavn": "Tørket"
-        },
-        {
-            "ID": 4,
-            "InnhostningAr": 2018,
-            "KiloprisUSD": 3,
-            "GardID": 4,
-            "ForedlingsNavn": "Tørket"
-        },
-        {
-            "ID": 5,
-            "InnhostningAr": 2019,
-            "KiloprisUSD": 32,
-            "GardID": 5,
-            "ForedlingsNavn": "Vasket"
-        },
-        {
-            "ID": 6,
-            "InnhostningAr": 2016,
-            "KiloprisUSD": 22,
-            "GardID": 6,
-            "ForedlingsNavn": "Vasket"
-        },
-        {
-            "ID": 7,
-            "InnhostningAr": 2015,
-            "KiloprisUSD": 10,
-            "GardID": 7,
-            "ForedlingsNavn": "Tørket"
-        }
-    ],
 
-    "Art": [
-        {
-            "Navn": "coffea arabica"
-        },
-        {
-            "Navn": "coffea robusta"
-        },
-        {
-            "Navn": "coffea liberica"
-        }
-    ],
-
-    "KaffebonneType": [
-        {
-            "Navn": "Kakao",
-            "ArtNavn": "coffea arabica"
-        },
-        {
-            "Navn": "Bani",
-            "ArtNavn": "coffea robusta"
-        },
-        {
-            "Navn": "Alfa",
-            "ArtNavn": "coffea liberica"
-        },
-        {
-            "Navn": "Celi",
-            "ArtNavn": "coffea liberica"
-        },
-        {
-            "Navn": "Deli",
-            "ArtNavn": "coffea liberica"
-        },
-        {
-            "Navn": "Feli",
-            "ArtNavn": "coffea robusta"
-        },
-        {
-            "Navn": "Heli",
-            "ArtNavn": "coffea arabica"
-        }
-    ],
 
     "BestarAv": [
         {
@@ -378,56 +465,6 @@
         }
     ],
 
-    "Foredlingsmetode": [
-        {
-            "Navn": "Vasket",
-            "Beskrivelse": "Vasker bønnene"
-        },
-        {
-            "Navn": "Tørket",
-            "Beskrivelse": "Tørker bønnene"
-        }
-    ],
-
-
-    "Gard": [
-        {
-            "ID": 1,
-            "Navn": "Lofoten",
-            "MeterOverHavet": 48,
-            "Region": "Nordland",
-            "Land": "Norge"
-        },
-        {
-            "ID": 2,
-            "Navn": "CoffeGard",
-            "MeterOverHavet": 492,
-            "Region": "Toscana",
-            "Land": "Italia"
-        },
-        {
-            "ID": 3,
-            "Navn": "Mes Que un Club",
-            "MeterOverHavet": 211,
-            "Region": "Toscana",
-            "Land": "Spania"
-        },
-        {
-            "ID": 4,
-            "Navn": "Kipsang",
-            "MeterOverHavet": 678,
-            "Region": "Kinyarwanda",
-            "Land": "Rwanda"
-        },
-        {
-            "ID": 5,
-            "Navn": "Bernal",
-            "MeterOverHavet": 901,
-            "Region": "Quito",
-            "Land": "Colombia"
-        }
-    ],
-
     "DyrkesAv": [
         {
             "KaffebonneNavn": "Kakao",
@@ -442,56 +479,22 @@
             "GardID": 2
         },
         {
-            "KaffebonneNavn": "Rwa",
+            "KaffebonneNavn": "Celi",
             "GardID": 4
         },
         {
-            "KaffebonneNavn": "Colo",
+            "KaffebonneNavn": "Deli",
             "GardID": 5
         },
         {
-            "KaffebonneNavn": "Rwa2",
-            "GardID": 6
+            "KaffebonneNavn": "Feli",
+            "GardID": 4
         },
         {
-            "KaffebonneNavn": "Colo2",
-            "GardID": 7
-        }
-    ],
-
-    "Region": [
-        {
-            "Region": "c",
-            "Land": "Spania"
-        },
-        {
-            "Region": "Nordland",
-            "Land": "Norge"
-        },
-        {
-            "Region": "Toscana",
-            "Land": "Italia"
-        },
-        {
-            "Region": "Bejing",
-            "Land": "Kina"
-        },
-        {
-            "Region": "Kinyarwanda",
-            "Land": "Rwanda"
-        },
-        {
-            "Region": "Nairobi",
-            "Land": "Kenya"
-        },
-        {
-            "Region": "Quito",
-            "Land": "Colombia"
-        },
-        {
-            "Region": "Arhuaco",
-            "Land": "Colombia"
+            "KaffebonneNavn": "Heli",
+            "GardID": 5
         }
     ]
+
 
 }
