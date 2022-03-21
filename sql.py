@@ -40,8 +40,9 @@ def login(epost: str, passord: str) -> str:
 def getCoffeesByName(name: str) -> list:
     query = ("SELECT B.ID, K.Navn, B.Navn "
             "FROM FerdigbrentKaffe AS K INNER JOIN Kaffebrenneri AS B ON (K.BrenneriID = B.ID) "
-            "WHERE K.Navn LIKE '%' + :name + '%';"
+            "WHERE K.Navn LIKE :name;"
             )
+    name = f"%{name}%"
     cursor.execute(query, {"name": name})
     rows = cursor.fetchall()
     return rows
