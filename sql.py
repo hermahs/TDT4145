@@ -48,7 +48,7 @@ def getCoffeesByName(name: str) -> list:
 
 def getMostCoffeeTastedThisYear() -> list: #fungerer kun for året 2022 :)
     query = ("SELECT Fornavn, Etternavn, COUNT(*) AS Antall " 
-            "FROM Kaffesmaking AS S INNER JOIN Bruker AS B "
+            "FROM Bruker AS B NATURAL JOIN Kaffesmaking AS S "
             "WHERE Dato >= '2022-01-01' " 
             "GROUP BY B.Epost "
             "ORDER BY Antall DESC;"
@@ -71,7 +71,8 @@ def bestCoffeeByRatingMoney() -> list:
 
 def getFloralCoffees() -> list:
     query = ("SELECT DISTINCT B.Navn, K.Navn "
-            "FROM (Kaffesmaking AS S INNER JOIN FerdigbrentKaffe AS K) INNER JOIN Kaffebrenneri AS B ON (K.BrenneriID = B.ID) "
+            "FROM (Kaffesmaking AS S INNER JOIN FerdigbrentKaffe AS K ON (S.KaffeNavn = K.Navn AND S.BrenneriID = K.BrenneriID)) "
+            "INNER JOIN Kaffebrenneri AS B ON (K.BrenneriID = B.ID) "
             "WHERE S.Notat LIKE '%floral%' OR K.Beskrivelse LIKE '%floral%';"
             )
     cursor.execute(query)
