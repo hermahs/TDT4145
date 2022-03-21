@@ -59,7 +59,7 @@ def getMostCoffeeTastedThisYear() -> list: #fungerer kun for året 2022 :)
     return rows
 
 def bestCoffeeByRatingMoney() -> list:
-    query = ("SELECT B.Navn, K.KiloprisNOK, AVG(S.Poeng) AS Gjennomsnittscore "
+    query = ("SELECT B.Navn, K.Navn, K.KiloprisNOK, AVG(S.Poeng) AS Gjennomsnittscore "
             "FROM Kaffesmaking AS S "
                 "INNER JOIN FerdigbrentKaffe AS K ON (S.KaffeNavn = K.Navn AND S.BrenneriID = K.BrenneriID) "
                 "INNER JOIN Kaffebrenneri AS B ON (B.ID = K.BrenneriID) "

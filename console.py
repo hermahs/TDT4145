@@ -1,5 +1,6 @@
 import sql
 import sys
+from pprint import pprint
 user = None
 
 def main():
@@ -50,7 +51,9 @@ def reviewCoffee():
     coffeeName = input("Kaffenavn*: ")
 
     result = sql.getCoffeesByName(coffeeName)
-    print(result)
+    print("")
+    pprint(result)
+    print("")
 
     roastery = input("Velg ID til brenneri fra listen*: ")
     note = input("Et kort notat: ")
@@ -67,13 +70,21 @@ def getData():
     (4) Søk etter kaffer som ikke er vaskede fra Rwanda eller Colombia\n""")
 
     if (userStory == "1"):
-        print(sql.getMostCoffeeTastedThisYear())
+        print("")
+        pprint(sql.getMostCoffeeTastedThisYear())
+        print("")
     elif (userStory == "2"):
-        print(sql.bestCoffeeByRatingMoney())
+        print("")
+        pprint(sql.bestCoffeeByRatingMoney())
+        print("")
     elif (userStory == "3"):
-        print(sql.getFloralCoffees())
+        print("")
+        pprint(sql.getFloralCoffees())
+        print("")
     elif (userStory == "4"):
-        print(sql.getNotWashedRwandaColombia())
+        print("")
+        pprint(sql.getNotWashedRwandaColombia())
+        print("")
     
     options()
 
