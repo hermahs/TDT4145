@@ -45,7 +45,7 @@ CREATE TABLE FerdigbrentKaffe (
         	REFERENCES Kaffebrenneri (ID)
             		ON DELETE CASCADE
             		ON UPDATE NO ACTION
-	CHECK( Brenningsgrad IN ('mørk','middels','lys') )
+	CHECK( Brenningsgrad IN ('mork','middels','lys') )
 );
 
 CREATE TABLE Kaffebrenneri (
