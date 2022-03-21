@@ -1,13 +1,8 @@
 import sql
 import sys
-cursor = None
 user = None
 
-def main(cur):
-    global cursor 
-    cursor = cur
-
-    print('Velkommen til kaffeDB\n')
+def main():
     isLogin = input('\nLogg inn med eksisterende bruker? [y/n]: ')
     if (isLogin == 'n'):
         print('Registrer en ny bruker:')
@@ -17,7 +12,7 @@ def main(cur):
         password = input('Passord*: ')
         msg = sql.createUser(email, fName, lName, password)
         print(msg)
-        login()
+        main()
     else:
         login()
 
@@ -28,7 +23,10 @@ def login():
     email = input('Epost*: ')
     password = input('Passord*: ')
     user = sql.login(email, password)
-    options()
+    if (user == None):
+        main()
+    else:
+        options()
 
 def options():
     correctInput = False
@@ -57,25 +55,25 @@ def reviewCoffee():
     roastery = input("Velg ID til brenneri fra listen*: ")
     note = input("Et kort notat: ")
     score = input("Poengscore (0-10)*: ")
-    date = input("Dato: ")
-    # TODO: SQL insert
+    date = input("Dato (YYYY-MM-DD): ")
+    sql.createCoffeeTasting(user, roastery, coffeeName, score, note, date);
     options()
 
 def getData():
     userStory = input("""\nHva vil du vite?\n
     (1) Brukere som har smakt flest unike kaffer i år\n
     (2) Kaffer som gir deg mest for pengene\n
-    (3) Florale kaffer\n
-    (4) Kaffer fra Rwanda og Colombia som ikke er vaskede\n""")
+    (3) Søk etter kaffer som er "florale"\n
+    (4) Søk etter kaffer som ikke er vaskede fra Rwanda eller Colombia\n""")
 
     if (userStory == "1"):
-        print(2)
+        print(sql.getMostCoffeeTastedThisYear())
     elif (userStory == "2"):
-        print(3)
+        print(sql.bestCoffeeByRatingMoney())
     elif (userStory == "3"):
-        print(4)
+        print(sql.getFloralCoffees())
     elif (userStory == "4"):
-        print(5)
+        print(sql.getNotWashedRwandaColombia())
     
     options()
 

@@ -32,7 +32,7 @@ CREATE TABLE FerdigbrentKaffe (
 	BrenneriID INTEGER NOT NULL,
 	Brenningsgrad TEXT NOT NULL,
     	Dato TEXT NOT NULL,
-    	Beksrivelse TEXT NOT NULL,
+    	Beskrivelse TEXT NOT NULL,
     	KiloprisNOK INTEGER NOT NULL ,
 	PartiID INTEGER NOT NULL,
 	
