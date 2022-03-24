@@ -63,7 +63,7 @@ def getData():
     userStory = input("""\nHva vil du vite?\n
     (1) Brukere som har smakt flest unike kaffer i år\n
     (2) Kaffer som gir deg mest for pengene\n
-    (3) Søk etter kaffer som er "florale"\n
+    (3) Søk etter kaffer som er beskrevet med ordet "floral"\n
     (4) Søk etter kaffer som ikke er vaskede fra Rwanda eller Colombia\n""")
 
     if (userStory == "1"):
