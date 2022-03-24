@@ -40,9 +40,8 @@ def login(epost: str, passord: str) -> str:
 def getCoffeesByName(name: str) -> list:
     query = ("SELECT B.ID, K.Navn, B.Navn "
             "FROM FerdigbrentKaffe AS K INNER JOIN Kaffebrenneri AS B ON (K.BrenneriID = B.ID) "
-            "WHERE K.Navn LIKE :name;"
+            "WHERE K.Navn=:name;"
             )
-    name = f"%{name}%"
     cursor.execute(query, {"name": name})
     rows = cursor.fetchall()
     return rows
@@ -61,8 +60,8 @@ def getMostCoffeeTastedThisYear() -> list: #fungerer kun for året 2022 :)
 def bestCoffeeByRatingMoney() -> list:
     query = ("SELECT B.Navn, K.Navn, K.KiloprisNOK, AVG(S.Poeng) AS Gjennomsnittscore "
             "FROM Kaffesmaking AS S "
-                "INNER JOIN FerdigbrentKaffe AS K ON (S.KaffeNavn = K.Navn AND S.BrenneriID = K.BrenneriID) "
-                "INNER JOIN Kaffebrenneri AS B ON (B.ID = K.BrenneriID) "
+            "INNER JOIN FerdigbrentKaffe AS K ON (S.KaffeNavn = K.Navn AND S.BrenneriID = K.BrenneriID) "
+            "INNER JOIN Kaffebrenneri AS B ON (B.ID = K.BrenneriID) "
             "GROUP BY B.Navn, K.Navn "
             "ORDER BY Gjennomsnittscore/K.KiloprisNOK DESC;"
             )
