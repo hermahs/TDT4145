@@ -1,6 +1,6 @@
 import sql
 import sys
-from pprint import pprint
+from tabulate import tabulate
 user = None
 
 def main():
@@ -51,9 +51,11 @@ def reviewCoffee():
     coffeeName = input("Kaffenavn*: ")
 
     result = sql.getCoffeesByName(coffeeName)
-    print("")
-    pprint(result)
-    print("")
+
+    print(tabulate(
+        result, 
+        headers=["BrenneriID", "Kaffenavn", "Brennerinavn"], 
+        tablefmt="psql"))
 
     roastery = input("Velg ID til brenneri fra listen*: ")
     note = input("Et kort notat: ")
@@ -70,21 +72,25 @@ def getData():
     (4) Søk etter kaffer som ikke er vasket fra Rwanda eller Colombia\n""")
 
     if (userStory == "1"):
-        print("")
-        pprint(sql.getMostCoffeeTastedThisYear())
-        print("")
+        print(tabulate(
+            sql.getMostCoffeeTastedThisYear(),
+            headers=["Fornavn", "Etternavn", "Antall smakinger"], 
+            tablefmt="psql"))
     elif (userStory == "2"):
-        print("")
-        pprint(sql.bestCoffeeByRatingMoney())
-        print("")
+        print(tabulate(
+            sql.bestCoffeeByRatingMoney(), 
+            headers=["Brennerinavn", "Kaffenavn", "KiloprisNOK", "Gjennomsnittscore"], 
+            tablefmt="psql"))
     elif (userStory == "3"):
-        print("")
-        pprint(sql.getFloralCoffees())
-        print("")
+        print(
+            tabulate(sql.getFloralCoffees(), 
+            headers=["Brennerinavn", "Kaffenavn"], 
+            tablefmt="psql"))
     elif (userStory == "4"):
-        print("")
-        pprint(sql.getNotWashedRwandaColombia())
-        print("")
+        print(
+            tabulate(sql.getNotWashedRwandaColombia(), 
+            headers=["Brennerinavn", "Kaffenavn"], 
+            tablefmt="psql"))
     
     options()
 
